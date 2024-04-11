@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Whisper&display=swap");
+
+:root {
+  --gradient-color: linear-gradient(
+    to right,
+    rgb(134, 239, 172),
+    rgb(59, 130, 246),
+    rgb(147, 51, 234)
+  );
+  --light-color: rgba(190, 190, 190, 0.2);
+  --box-shadow: rgba(0, 0, 0, 0.4);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background: #bebebe;
+  margin: 0 auto;
+}
+
+.container {
+  background: #fff;
+  width: 90%;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 8px 10px 60px var(--box-shadow);
+  border: 1rem solid var(--light-color);
+  text-align: center;
+}
+.grid-container {
+  margin: 2rem auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 4rem;
+  place-content: start center;
+  text-align: center;
+}
+
+h1 {
+  display: inline;
+}
+
+.heading {
+  font-size: 2.5rem;
+  text-decoration: none;
+  margin: 1rem;
+  color: black;
+  text-shadow: 0px 3px 6px;
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.image-container {
+  height: 300px;
+  width: 300px;
+  background-color: var(--light-color);
+  overflow: hidden;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 10px 20px 30px var(--box-shadow);
+}
+
+.image {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background: var(--gradient-color);
+  border: none;
+  outline: none;
+  color: lavenderblush;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 10px 20px 30px var(--box-shadow);
+  transition: opacity 0.4s ease-in-out;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:active {
+  opacity: 100%;
+}
+
+.back-to-top {
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  bottom: 3rem;
+  right: 2vw;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: white;
+  color: black;
+  transition: background 0.4s, color 0.4s, transform 0.4s ease-in-out;
+}
+
+.back-to-top:hover {
+  background: var(--gradient-color);
+  color: white;
+}
+
+.back-to-top:active {
+  transform: scale(1.02);
+}
+@media (max-width: 1280px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 300px);
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 300px;
+    gap: 2rem;
+  }
+}
